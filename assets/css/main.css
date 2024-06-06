@@ -14,6 +14,10 @@
     justify-content:space-between;
     margin-bottom:60px
 }
+
+.send textarea {
+    color: #0c0c0c;
+  }
 .work-request--information .information-name,.work-request--information 
 .information-email{
     position:relative;
