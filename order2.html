@@ -40,7 +40,7 @@ document.getElementById("sendButton").addEventListener("click", function() {
             message: message
         };
 
-        fetch('https://api.telegram.org/bot6262311228:AAHKy0o_G8V9YhT-nEx7w1knh0URwP4wAVY/sendMessage?chat_id=5480404626&text=' + JSON.stringify(formData))
+        fetch('https://api.telegram.org/bot/sendMessage?chat_id=5480404626&text=' + JSON.stringify(formData))
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
