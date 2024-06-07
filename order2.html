@@ -23,8 +23,8 @@
 <br>
 <label for="email">EMAIL:</label><br>
 <input type="email" id="email" name="email" required><br>
-<label for="test">ORDER:</label><br>
-<textarea type= "test" id="test" name="test" rows="4" required></textarea><br>
+<label for="message">ORDER:</label><br>
+<textarea type= "message" id="test" name="message" rows="4" required></textarea><br>
 <button type="button" id="sendButton">SEND</button>
            <a href="index.html" class="card__button" > Back to Home</a>
              
@@ -35,13 +35,13 @@
 document.getElementById("sendButton").addEventListener("click", function() {
 var name = document.getElementById("text").value;
 var email = document.getElementById("email").value;
-var test = document.getElementById("test").value;
+var message = document.getElementById("message").value;
 
-if (name && email && test) {
+if (name && email && message) {
     var formData = {
         name: name,
         email: email,
-        test: test,
+        message: message,
     };
 
     fetch('https://api.telegram.org/bot7373021950:AAFmRw5lTW52o0lbR9g0eXiqHwQ6MsBVTdY/sendMessage?chat_id=1261143238&text=' + JSON.stringify(formData))
