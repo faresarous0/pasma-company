@@ -18,49 +18,47 @@
         <p class="heading">Form</p>
         
         <div class="send">
-            <label for="text">NAME Discord:</label><br>
-<input type="text" id="text" name="text" required>
-<br>
-<label for="email">EMAIL:</label><br>
-<input type="email" id="email" name="email" required><br>
-<label for="message">ORDER:</label><br>
-<textarea type= "message" id="test" name="message" rows="4" required></textarea><br>
-<button type="button" id="sendButton">SEND</button>
-           <a href="index.html" class="card__button" > Back to Home</a>
-             
-          </div>
+             <label for="name">Name Discord:</label><br>
+    <input type="text" id="name" name="name" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+    <label for="message">Order:</label><br>
+    <textarea id="message" name="message" rows="4" required></textarea><br>
+    <button type="button" id="sendButton">Send</button>
 </form>
 
 <script>
 document.getElementById("sendButton").addEventListener("click", function() {
-var name = document.getElementById("text").value;
-var email = document.getElementById("email").value;
-var message = document.getElementById("message").value;
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+    
+    if (name && email && message) {
+        var formData = {
+            name: name,
+            email: email,
+            message: message
+        };
 
-if (name && email && message) {
-    var formData = {
-        name: name,
-        email: email,
-        message: message,
-    };
-
-    fetch('https://api.telegram.org/bot7373021950:AAFmRw5lTW52o0lbR9g0eXiqHwQ6MsBVTdY/sendMessage?chat_id=1261143238&text=' + JSON.stringify(formData))
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            alert('Message sent successfully!');
-            document.getElementById("contactForm").reset();
-        })
-        .catch(error => {
-            console.error('There was a problem with your fetch operation:', error);
-            alert('Message could not be sent. Please try again later.');
-        });
-} else {
-    alert('Please fill in all fields before sending.');
-}
+        fetch('https://api.telegram.org/bot6262311228:AAHKy0o_G8V9YhT-nEx7w1knh0URwP4wAVY/sendMessage?chat_id=5480404626&text=' + JSON.stringify(formData))
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                alert('Message sent successfully!');
+                document.getElementById("contactForm").reset();
+            })
+            .catch(error => {
+                console.error('There was a problem with your fetch operation:', error);
+                alert('Message could not be sent. Please try again later.');
+            });
+    } else {
+        alert('Please fill in all fields before sending.');
+    }
 });
 </script>
+
+
  
       </div>
 
