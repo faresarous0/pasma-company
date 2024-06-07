@@ -17,30 +17,31 @@
     <div class="card">
         <p class="heading">Form</p>
         
-        <div class="send">
-             <label for="name">Name Discord:</label><br>
-    <input type="text" id="name" name="name" required><br>
+       <div class="send">
+                <label for="text">Name:</label><br>
+    <input type="text" id="text" name="text" required><br>
     <label for="email">Email:</label><br>
     <input type="email" id="email" name="email" required><br>
-    <label for="message">Mssage:</label><br>
-    <textarea id="message" name="message" rows="4" required></textarea><br>
+   <label for="test">Message:</label><br>
+    <textarea type= "test" id="test" name="test" rows="4" required></textarea><br>                 
     <button type="button" id="sendButton">Send</button>
+  </div>
 </form>
 
 <script>
 document.getElementById("sendButton").addEventListener("click", function() {
-    var name = document.getElementById("name").value;
+    var name = document.getElementById("text").value;
     var email = document.getElementById("email").value;
-    var message = document.getElementById("message").value;
+      var test = document.getElementById("test").value;
     
-    if (name && email && message) {
+    if (name && email && test) {
         var formData = {
             name: name,
             email: email,
-            message: message
+          test: test
         };
 
-       fetch('https://api.telegram.org/bot7373021950:AAFmRw5lTW52o0lbR9g0eXiqHwQ6MsBVTdY/sendMessage?chat_id=1261143238&text=' + JSON.stringify(formData))
+        fetch('https://api.telegram.org/bot7373021950:AAFmRw5lTW52o0lbR9g0eXiqHwQ6MsBVTdY/sendMessage?chat_id=1261143238&text=' + JSON.stringify(formData))
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -58,8 +59,6 @@ document.getElementById("sendButton").addEventListener("click", function() {
 });
 </script>
 
-
- 
       </div>
 
 </body>
